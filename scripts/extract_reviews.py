@@ -67,7 +67,7 @@ class AliExpressBackend:
             "rating": raw.get("buyerEval", 100) / 20,
             "date": created,
             "content": raw.get("buyerFeedback", ""),
-            "photos": json.dumps(raw.get("images", [])),
+            "photos": json.dumps(raw.get("images", [])), 
         }
 
     @staticmethod
