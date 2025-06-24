@@ -1,0 +1,14 @@
+streamlit>=1.34
+pandas>=2.2
+httpx>=0.27
+pymysql>=1.1
+faker>=25
+importlib_metadata>=7;
+
+# Optional .env support
+python-dotenv>=1.0
+
+# Dev / code-quality (install only in dev envs)
+black>=24.4
+isort>=5.13
+flake8>=6.1
