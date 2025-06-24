@@ -88,10 +88,12 @@ def widget_for_action(action: argparse.Action, key_prefix: str) -> Any:
             format="%d" if typ is int else "%.2f",
         )
 
-    if action.dest == "csv":
-        uploaded = st.file_uploader(label, type=["csv"], key=key)
+    if any(x in action.dest.lower() for x in ["csv", "file", "input"]):
+        if "outfile" in action.dest.lower() or "output" in action.dest.lower():
+            return st.text_input(label, value=default, key=key)
+        uploaded = st.file_uploader(label, key=key, type=["csv", "txt"])
         if uploaded:
-            temp_path = ROOT / f"_uploaded_{key}.csv"
+            temp_path = ROOT / f"_uploaded_{key}"
             with open(temp_path, "wb") as f:
                 f.write(uploaded.read())
             return str(temp_path)
