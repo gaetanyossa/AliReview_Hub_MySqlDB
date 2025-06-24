@@ -21,7 +21,7 @@ Each operation is handled by an independent Python script, auto-detected and exp
 
 ```txt
 ALIREVIEW_HUB/
-├── img/                      # UI screenshots or branding
+├── img/                      # UI screenshots
 │   └── img.png
 ├── scripts/                  # Auto-discovered backend tools
 │   ├── extract_reviews.py
